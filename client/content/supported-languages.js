@@ -1,0 +1,17 @@
+const supportedLanguages = {
+  Turkish: "tr",
+  English: "en",
+  Italian: "it",
+  German: "de",
+  Dutch: "nl",
+  Japanese: "ja",
+  Korean: "ko",
+  French: "fr",
+  Portuguese: "pt",
+  Russian: "ru",
+  Spanish: "es",
+  Swedish: "sv",
+  // Finnish: "fi",
+  // Norwegian: "no",
+  // Polish: "pl",
+};

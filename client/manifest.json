@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Spotra",
+  "version": "0.1.0",
+  "description": "Learn by surfing with Spotra",
+  "permissions": ["storage", "tabs", "activeTab"],
+  "host_permissions": ["https://*/*", "http://*/*"],
+  "background": {
+    "service_worker": "./background/index.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": [
+        "./content/supported-languages.js",
+        "./content/chrome-storage.js",
+        "./content/translate.js",
+        "./content/selection.js",
+        "./content/initialize-elements.js",
+        "./content/spotra-events.js",
+        "./content/swapper.js"
+      ],
+      "css": ["./content/style.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "resources": ["content/images/pointer.png", "content/style.css"]
+    }
+  ],
+  "action": {
+    "default_title": "Learn by surfing with Spotra",
+    "default_popup": "./popup/index.html"
+  }
+}
