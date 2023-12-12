@@ -1,3 +1,6 @@
+/** Global varialbes */
+let clickedElement;
+
 /**
  * @description Fetches the languages stored in Chrome local storage and updates the Swapper UI
  */

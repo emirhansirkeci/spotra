@@ -1,21 +1,5 @@
 body {
   width: 700px;
   transition: all 1s ease;
-}
-
-.swap-languages {
-  cursor: pointer;
-  transition: all 0.2s ease-out;
-}
-
-.swap-languages:hover {
-  transform: rotate(180deg);
-}
-
-.change-message {
-  display: none;
-}
-
-.change-message.visible {
-  display: block;
+  text-align: center;
 }
