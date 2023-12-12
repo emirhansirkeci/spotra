@@ -8,7 +8,7 @@ function getLanguages() {
 }
 
 async function translate(text) {
-  const apiUrl = "https://translate-server-three.vercel.app/translate";
+  const apiUrl = "https://spotra-server.vercel.app/translate";
   // const apiUrl = "http://localhost:3000/translate";
 
   const headers = {
