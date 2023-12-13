@@ -17,4 +17,4 @@ Spotra is a Chrome extension that allows you to easily translate content without
 
 ### _Note_
 
-_Due to the ongoing development process, I am currently using the Vercel Hobby plan for the server side._
+_Due to the ongoing development process, I am currently using the Vercel hobby plan for the server side._
