@@ -1,12 +1,3 @@
-function getLanguages() {
-  return new Promise((resolve, reject) => {
-    chrome.storage.local.get(["translateFrom", "translateTo"], (result) => {
-      if (chrome.runtime.lastError) reject(chrome.runtime.lastError);
-      else resolve([result.translateFrom, result.translateTo]);
-    });
-  });
-}
-
 async function translate(text) {
   const apiUrl = "https://spotra-server.vercel.app/translate";
   // const apiUrl = "http://localhost:3000/translate";
