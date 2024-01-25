@@ -1,12 +1,20 @@
-// Keydown event listeners for inside and outside of the input
+let userAgent = navigator.userAgent.toLowerCase();
+
 document.addEventListener("keydown", async (e) => {
-  if ((e.altKey && e.key === "q") || (e.altKey && e.key === "Q")) {
-    if (spotraHost.style.visibility == "hidden") clearSpotra();
+  e.stopPropagation();
+
+  if ((e.altKey && e.key === "q") || (e.metaKey && e.key === "Q"))
     toggleSpotra();
-  }
 
   if (e.key === "Escape" && spotraHost.style.visibility == "visible")
     closeSpotra();
+
+  // Shortcut for MacOS
+  if (userAgent.includes("macintosh")) {
+    if ((e.metaKey && e.key === "m") || (e.metaKey && e.key === "M"))
+      toggleSpotra();
+  }
+  //
 });
 
 input.addEventListener("keydown", async (e) => {
@@ -21,6 +29,13 @@ input.addEventListener("keydown", async (e) => {
     e.key === "Escape"
   )
     toggleSpotra();
+
+  // Shortcut for MacOS
+  if (userAgent.includes("macintosh")) {
+    if ((e.metaKey && e.key === "m") || (e.metaKey && e.key === "M"))
+      toggleSpotra();
+  }
+  //
 });
 
 // Prevent event bubbling
@@ -89,8 +104,10 @@ function clearSpotra() {
 }
 
 function toggleSpotra() {
-  if (spotraHost.style.visibility != "visible") openSpotra();
-  else closeSpotra();
+  if (spotraHost.style.visibility != "visible") {
+    clearSpotra();
+    openSpotra();
+  } else closeSpotra();
 }
 
 function openSpotra() {
