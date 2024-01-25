@@ -1,41 +1,34 @@
-let userAgent = navigator.userAgent.toLowerCase();
+const userAgent = navigator.userAgent.toLowerCase();
+const isMacintosh = userAgent.includes("macintosh");
 
 document.addEventListener("keydown", async (e) => {
   e.stopPropagation();
 
-  if ((e.altKey && e.key === "q") || (e.metaKey && e.key === "Q"))
-    toggleSpotra();
+  const isAltQ = e.altKey && (e.key === "q" || e.key === "Q");
+  const isEscape =
+    e.key === "Escape" && spotraHost.style.visibility == "visible";
 
-  if (e.key === "Escape" && spotraHost.style.visibility == "visible")
-    closeSpotra();
+  const isMacShortcut = e.metaKey && (e.key === "m" || e.key === "M");
 
-  // Shortcut for MacOS
-  if (userAgent.includes("macintosh")) {
-    if ((e.metaKey && e.key === "m") || (e.metaKey && e.key === "M"))
-      toggleSpotra();
-  }
-  //
+  if (isAltQ || (isMacintosh && isMacShortcut)) toggleSpotra();
+
+  if (isEscape) closeSpotra();
 });
 
 input.addEventListener("keydown", async (e) => {
-  if (e.key == "Enter") {
+  const isEnter = e.key === "Enter";
+  const isAltQ = e.altKey && (e.key === "q" || e.key === "Q");
+  const isEscape = e.key === "Escape";
+  const isMacShortcut = e.metaKey && (e.key === "m" || e.key === "M");
+
+  if (isEnter) {
     const text = input.value;
     if (!text) return (input.placeholder = "Please write anything");
 
     handleText(text);
-  } else if (
-    (e.altKey && e.key === "q") ||
-    (e.altKey && e.key === "Q") ||
-    e.key === "Escape"
-  )
-    toggleSpotra();
-
-  // Shortcut for MacOS
-  if (userAgent.includes("macintosh")) {
-    if ((e.metaKey && e.key === "m") || (e.metaKey && e.key === "M"))
-      toggleSpotra();
   }
-  //
+
+  if (isAltQ || isEscape || (isMacintosh && isMacShortcut)) toggleSpotra();
 });
 
 // Prevent event bubbling

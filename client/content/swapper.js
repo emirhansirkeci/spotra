@@ -1,22 +1,21 @@
 /** Global varialbes */
 let clickedElement;
 
-/**
- * @description Fetches the languages stored in Chrome local storage and updates the Swapper UI
- */
+// Fetches the languages stored in Chrome local storage and updates the Swapper UI
 async function updateSwapper() {
   const [translateFrom, translateTo] = await getLanguages();
 
   fromElement.innerText = translateFrom;
+  fromElement.setAttribute("data-value", translateFrom);
+
   toElement.innerText = translateTo;
+  toElement.setAttribute("data-value", translateTo);
 }
 
 updateSwapper();
 //
 
-/**
- * @description Append supported languages to the langSelector element
- */
+// Append supported languages to the langSelector element
 Object.keys(supportedLanguages).forEach((languageName) => {
   const language = document.createElement("div");
   const languageCode = supportedLanguages[languageName];
@@ -56,6 +55,7 @@ langSelector.onclick = (e) => {
   let language = e.target.getAttribute("data-value");
 
   clickedElement.innerText = language;
+  clickedElement.setAttribute("data-value", language);
 
   if (clickedElement == fromElement)
     chrome.storage.local.set({ translateFrom: language });
@@ -72,4 +72,37 @@ document.addEventListener("click", (e) => {
 
 input.addEventListener("click", () => closeLangSelector());
 spotraResult.addEventListener("click", () => closeLangSelector());
+//
+
+// Language swap shortcut
+function handleLanguageSwap(e) {
+  const isMacShortcut = e.metaKey && (e.key === "j" || e.key === "J");
+  const isShortcutQ = e.altKey && (e.key === "q" || e.key === "Q");
+
+  if (isMacintosh && !isMacShortcut) {
+    return;
+  }
+
+  if (!isMacintosh && !isShortcutQ) {
+    return;
+  }
+
+  let currentFromLanguage = fromElement.getAttribute("data-value");
+  let currentToLanguage = toElement.getAttribute("data-value");
+
+  fromElement.setAttribute("data-value", currentToLanguage);
+  toElement.setAttribute("data-value", currentFromLanguage);
+
+  fromElement.innerText = currentToLanguage;
+  toElement.innerText = currentFromLanguage;
+
+  chrome.storage.local.set({ translateFrom: currentToLanguage });
+  chrome.storage.local.set({ translateTo: currentFromLanguage });
+
+  closeResult();
+  removeSelection();
+}
+
+input.addEventListener("keydown", (e) => handleLanguageSwap(e));
+document.addEventListener("keydown", (e) => handleLanguageSwap(e));
 //
