@@ -69,7 +69,7 @@ swapper.appendChild(langSelector);
 
 // A div element that adds a transparent effect to the right of the input
 const transparentEffect = document.createElement("div");
-transparentEffect.className = "transparent-effect apply-gradient";
+transparentEffect.className = "transparent-effect apply-transparent-effect";
 //
 
 // Append all elements to the wrappers
