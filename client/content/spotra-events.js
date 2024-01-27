@@ -15,6 +15,7 @@ document.addEventListener("keydown", async (e) => {
   if (isEscape) closeSpotra();
 });
 
+let applyTransparentEffect;
 input.addEventListener("keydown", async (e) => {
   const isEnter = e.key === "Enter";
   const isAltQ = e.altKey && (e.key === "q" || e.key === "Q");
@@ -29,6 +30,15 @@ input.addEventListener("keydown", async (e) => {
   }
 
   if (isAltQ || isEscape || (isMacintosh && isMacShortcut)) toggleSpotra();
+
+  // Apply a gradient transparent effect only when the user is not actively typing
+  clearTimeout(applyTransparentEffect);
+  transparentEffect.classList.remove("apply-transparent-effect");
+
+  applyTransparentEffect = setTimeout(() => {
+    transparentEffect.classList.add("apply-transparent-effect");
+  }, 1000);
+  //
 });
 
 // Prevent event bubbling

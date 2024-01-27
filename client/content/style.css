@@ -173,8 +173,20 @@
   background-color: rgb(212, 211, 211);
 }
 
-/* .input.blur {
-  transition: all 0.25s ease;
-  filter: blur(1px);
-  user-select: none;
-} */
+.transparent-effect {
+  position: absolute;
+  top: 7.5px;
+  right: 105px;
+  width: 40px;
+  height: calc(100% - (7.5px * 2));
+  pointer-events: none;
+}
+
+.transparent-effect.apply-transparent-effect {
+  background: linear-gradient(
+    to right,
+    rgba(248, 245, 244, 0.4),
+    rgba(248, 245, 244, 0.9),
+    rgba(248, 245, 244, 1)
+  );
+}
