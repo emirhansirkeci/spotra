@@ -117,7 +117,7 @@ function openSpotra() {
   const { selectedText } = checkSelection();
 
   spotraHost.style.visibility = "visible";
-  spotraHost.style.opacity = 0.9;
+  spotraHost.style.opacity = 1;
 
   input.focus();
   if (selectedText) handleSelectedText(selectedText);
