@@ -29,7 +29,6 @@
   border-left: 1px solid rgba(0, 0, 0, 0.2);
   border-right: 1px solid rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  z-index: 1;
 }
 
 .spotra-result.open {
@@ -50,7 +49,6 @@
   height: 56px;
   margin: auto;
   border-radius: 5px 5px 0 0;
-  box-shadow: 0 25px 60px 10px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(0, 0, 0, 0.2);
   outline: none;
   background-color: #f8f5f4;
