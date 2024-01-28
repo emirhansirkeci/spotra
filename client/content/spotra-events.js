@@ -25,6 +25,7 @@ input.addEventListener("keydown", async (e) => {
   if (isEnter) {
     const text = input.value;
     if (!text) return (input.placeholder = "Please write anything");
+    else input.placeholder = "Spotra";
 
     handleText(text);
   }
