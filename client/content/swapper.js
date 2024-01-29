@@ -77,7 +77,7 @@ spotraResult.addEventListener("click", () => closeLangSelector());
 // Language swap shortcut
 function handleLanguageSwap(e) {
   const isMacShortcut = e.metaKey && (e.key === "j" || e.key === "J");
-  const isShortcutQ = e.altKey && (e.key === "q" || e.key === "Q");
+  const isShortcutQ = e.altKey && (e.key === "j" || e.key === "J");
 
   if (isMacintosh && !isMacShortcut) {
     return;
