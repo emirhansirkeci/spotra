@@ -26,7 +26,11 @@
   "web_accessible_resources": [
     {
       "matches": ["https://*/*", "http://*/*"],
-      "resources": ["content/images/find-icon.svg", "content/style.css"]
+      "resources": [
+        "content/images/find-icon.svg",
+        "content/images/loading-loop.svg",
+        "content/style.css"
+      ]
     }
   ],
   "action": {

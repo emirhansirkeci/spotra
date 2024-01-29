@@ -16,6 +16,7 @@
 }
 
 .spotra-result {
+  position: relative;
   opacity: 0;
   margin-top: -32px;
   visibility: hidden;
@@ -40,6 +41,11 @@
 .translated-text {
   padding: 0;
   margin: 0;
+  transition: all 0.1s ease-in-out;
+}
+
+.translated-text.blur-text {
+  filter: blur(1px);
 }
 
 .input {
@@ -62,6 +68,7 @@
 
 .input-wrapper {
   position: relative;
+  z-index: 1;
 }
 
 .swapper {
@@ -186,5 +193,26 @@
     rgba(248, 245, 244, 0.9),
     rgba(248, 245, 244, 1)
   );
+  opacity: 1;
+}
+
+.loading-loop {
+  opacity: 0;
+  position: absolute;
+  left: 16px;
+  top: 0;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url("images/loading-loop.svg");
+  background-color: #333;
+  mask-image: url("images/loading-loop.svg");
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.loading-loop.show-loading-loop {
   opacity: 1;
 }

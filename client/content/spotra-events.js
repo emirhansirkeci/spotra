@@ -60,17 +60,34 @@ input.addEventListener(
 );
 //
 
+// Handle loading icon display
+function showLoadingIcon() {
+  if (spotraResult.classList.contains("open")) {
+    loadingIcon.classList.add("show-loading-loop");
+    translatedText.classList.add("blur-text");
+  }
+}
+
+function hideLoadingIcon() {
+  loadingIcon.classList.remove("show-loading-loop");
+  translatedText.classList.remove("blur-text");
+}
+//
+
 // Selected and entered text handlers
 async function handleSelectedText(selectedText) {
-  const text = selectedText;
-  input.value = text;
-  const result = await translate(text);
+  showLoadingIcon();
+  input.value = selectedText;
+  const result = await translate(selectedText);
+  hideLoadingIcon();
 
   updateAndOpenResult(result);
 }
 
 async function handleText(text) {
+  showLoadingIcon();
   const result = await translate(text);
+  hideLoadingIcon();
 
   updateAndOpenResult(result);
 }
