@@ -34,10 +34,10 @@ input.addEventListener("keydown", async (e) => {
 
   // Apply a gradient transparent effect only when the user is not actively typing
   clearTimeout(applyTransparentEffect);
-  transparentEffect.classList.remove("apply-transparent-effect");
+  transparentEffectDiv.classList.remove("apply-transparent-effect");
 
   applyTransparentEffect = setTimeout(() => {
-    transparentEffect.classList.add("apply-transparent-effect");
+    transparentEffectDiv.classList.add("apply-transparent-effect");
   }, 1000);
   //
 });
