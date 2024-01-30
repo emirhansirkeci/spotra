@@ -12,15 +12,23 @@
     {
       "matches": ["https://*/*", "http://*/*"],
       "js": [
-        "./content/supported-languages.js",
-        "./content/chrome-storage.js",
-        "./content/translate.js",
-        "./content/selection.js",
-        "./content/initialize-elements.js",
-        "./content/spotra-events.js",
-        "./content/swapper.js"
+        "content/supported-languages.js",
+        "content/chrome-storage.js",
+        "content/translate.js",
+        "content/selection.js",
+        "content/initialize-elements.js",
+        "content/input.js",
+        "content/swapper.js"
       ],
-      "css": ["./content/style.css"]
+      "css": [
+        "content/style/global.css",
+        "content/style/general.css",
+        "content/style/spotra.css",
+        "content/style/input.css",
+        "content/style/result.css",
+        "content/style/swapper.css",
+        "content/style/media-queries.css"
+      ]
     }
   ],
   "web_accessible_resources": [
@@ -29,7 +37,13 @@
       "resources": [
         "content/images/find-icon.svg",
         "content/images/loading-loop.svg",
-        "content/style.css"
+        "content/style/global.css",
+        "content/style/general.css",
+        "content/style/spotra.css",
+        "content/style/input.css",
+        "content/style/result.css",
+        "content/style/swapper.css",
+        "content/style/media-queries.css"
       ]
     }
   ],

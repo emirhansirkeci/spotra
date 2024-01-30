@@ -1,0 +1,32 @@
+.spotra-result {
+  position: relative;
+  opacity: 0;
+  margin-top: -32px;
+  visibility: hidden;
+  background-color: var(--background-color);
+  width: 50vw;
+  padding: 5px 60px;
+  color: var(--text-opaque-color);
+  transition: all 200ms ease-out;
+  border-radius: 0 0 5px 5px;
+  font-size: 16px;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.spotra-result.open {
+  opacity: 1;
+  margin-top: 0;
+  visibility: visible;
+}
+
+.translated-text {
+  padding: 0;
+  margin: 0;
+  transition: all 0.1s ease-in-out;
+}
+
+.translated-text.blur-text {
+  filter: blur(1px);
+}

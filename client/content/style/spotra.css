@@ -1,0 +1,15 @@
+.spotra-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  z-index: 999999;
+}
+
+.spotra-wrapper * {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  box-sizing: border-box;
+}

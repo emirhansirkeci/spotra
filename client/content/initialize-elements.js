@@ -10,14 +10,27 @@ Object.assign(spotraHost.style, {
   visibility: "hidden",
   opacity: "0",
   transition: "opacity 100ms ease-in",
-  "z-index": "9999",
+  "z-index": "999999",
 });
 
-// Import CSS file
+// Import CSS files
 const style = document.createElement("style");
-const style_url = chrome.runtime.getURL("content/style.css");
 
-style.textContent = `@import url(${style_url})`;
+const files = [
+  "content/style/global.css",
+  "content/style/general.css",
+  "content/style/spotra.css",
+  "content/style/input.css",
+  "content/style/result.css",
+  "content/style/swapper.css",
+  "content/style/media-queries.css",
+];
+
+files.forEach((file) => {
+  const style_url = chrome.runtime.getURL(file);
+  style.textContent += `@import url(${style_url});`;
+});
+
 spotraRoot.appendChild(style);
 //
 

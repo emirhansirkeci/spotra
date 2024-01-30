@@ -1,0 +1,22 @@
+.input-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.input {
+  font-size: 24px;
+  display: block;
+  width: 50vw;
+  height: 56px;
+  margin: auto;
+  border-radius: 5px 5px 0 0;
+  border: 1px solid var(--border-color);
+  outline: none;
+  background-color: var(--background-color);
+  background-image: url("../images/find-icon.svg");
+  background-position: left 17px center;
+  background-repeat: no-repeat;
+  background-size: 32px;
+  padding: 0 120px 0 60px;
+  color: var(--text-color);
+}
