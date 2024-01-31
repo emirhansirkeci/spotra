@@ -1,36 +1,24 @@
-const userAgent = navigator.userAgent.toLowerCase();
-const isMacintosh = userAgent.includes("macintosh");
-
 document.addEventListener("keydown", async (e) => {
   e.stopPropagation();
 
-  const isAltQ = e.altKey && (e.key === "q" || e.key === "Q");
-  const isEscape =
-    e.key === "Escape" && spotraHost.style.visibility == "visible";
+  const keyStatus = handleEvents(e);
 
-  const isMacShortcut = e.metaKey && (e.key === "m" || e.key === "M");
-
-  if (isAltQ || (isMacintosh && isMacShortcut)) toggleSpotra();
-
-  if (isEscape) closeSpotra();
+  if (keyStatus.mainShortcut) toggleSpotra();
+  if (keyStatus.close) closeSpotra();
 });
 
 let applyTransparentEffect;
 input.addEventListener("keydown", async (e) => {
-  const isEnter = e.key === "Enter";
-  const isAltQ = e.altKey && (e.key === "q" || e.key === "Q");
-  const isEscape = e.key === "Escape";
-  const isMacShortcut = e.metaKey && (e.key === "m" || e.key === "M");
+  const keyStatus = handleEvents(e);
 
-  if (isEnter) {
-    const text = input.value;
-    if (!text) return (input.placeholder = "Please write anything");
+  if (keyStatus.close || keyStatus.mainShortcut) toggleSpotra();
+
+  if (keyStatus.enter) {
+    if (!input.value) return (input.placeholder = "Please write anything");
     else input.placeholder = "Spotra";
 
-    handleText(text);
+    handleText(input.value);
   }
-
-  if (isAltQ || isEscape || (isMacintosh && isMacShortcut)) toggleSpotra();
 
   // Apply a gradient transparent effect only when the user is not actively typing
   clearTimeout(applyTransparentEffect);

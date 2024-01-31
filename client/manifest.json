@@ -14,6 +14,7 @@
       "js": [
         "content/supported-languages.js",
         "content/chrome-storage.js",
+        "content/shortcuts.js",
         "content/translate.js",
         "content/selection.js",
         "content/initialize-elements.js",
