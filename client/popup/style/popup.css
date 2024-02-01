@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+body {
+  width: 700px;
+  transition: all 1s ease;
+  font-family: Raleway;
+  color: #111;
+}
+
+.title {
+  text-align: center;
+}
+
+kbd {
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.1em 0.5em;
+  margin: 0 0.2em;
+  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+  background-color: #eee;
+  color: #111;
+}
+
+.shortcut {
+  margin-bottom: 16px;
+}
+
+.shortcuts-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.shortcuts-table th,
+.shortcuts-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.shortcuts-table th {
+  background-color: #f2f2f2;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer label {
+  margin: 0 6px;
+}

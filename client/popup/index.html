@@ -6,14 +6,57 @@
     <title>Spotra</title>
 
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="popup.css" rel="stylesheet" type="text/css" />
+    <link href="style/popup.css" rel="stylesheet" type="text/css" />
 
     <script defer src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script defer type="module" src="popup.js"></script>
   </head>
   <body>
     <div class="container-fluid py-4 px-5">
-      <h3>Settings Will Be Here Soon</h3>
+      <h3 class="title">Shortcuts and Usage Tips</h3>
+
+      <table class="shortcuts-table">
+        <tr>
+          <th>Action</th>
+          <th>MacOS</th>
+          <th>Other</th>
+        </tr>
+        <tr>
+          <td>Toggle</td>
+          <td><kbd>⌘</kbd> + <kbd>m</kbd></td>
+          <td><kbd>alt</kbd> + <kbd>m</kbd></td>
+        </tr>
+        <tr>
+          <td>Swap Languages</td>
+          <td><kbd>⌘</kbd> + <kbd>j</kbd></td>
+          <td><kbd>alt</kbd> + <kbd>j</kbd></td>
+        </tr>
+        <tr>
+          <td>Close</td>
+          <td><kbd>esc</kbd></td>
+          <td><kbd>esc</kbd></td>
+        </tr>
+      </table>
+
+      <div class="alert alert-info mt-3">
+        <h5 class="alert-heading">Quick Translate</h5>
+        <label>Select a text and open Spotra to see what happens!</label>
+      </div>
+
+      <div class="alert alert-primary mt-3">
+        <h5 class="alert-heading">No Need to Copy Paste</h5>
+        <label>Open Spotra and select the text to be translated automatically.</label>
+      </div>
+
+      <hr />
+
+      <div class="footer text-center">
+        <img
+          src="../logo-set/black-background/spotra-black-128.png"
+          width="24px"
+        />
+        <label>Stay focused with Spotra</label>
+      </div>
     </div>
   </body>
 </html>
