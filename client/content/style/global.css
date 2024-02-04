@@ -3,7 +3,9 @@
 :root {
   --text-color: rgb(51, 51, 51);
   --text-opaque-color: rgb(51, 51, 51, 0.9);
-  --border-color: rgba(0, 0, 0, 0.2);
+  --border-color: rgba(0, 0, 0, 0.1);
   --background-color: #f8f5f4;
   --language-list-background-color: #eee;
+  --constant-width: 55vw;
+  --constant-width-for-small-devices: 65vw;
 }

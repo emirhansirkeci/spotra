@@ -44,8 +44,7 @@
         "content/style/result.css",
         "content/style/swapper.css",
         "content/style/media-queries.css",
-        "logo-set/black-background/spotra-black-128.png",
-        "logo-set/white-background/spotra-white-128.png"
+        "logo-set/spotra-white.png"
       ]
     }
   ],

@@ -52,14 +52,12 @@ input.addEventListener(
 
 // Handle loading icon display
 function showLoadingIcon() {
-  if (spotraResult.classList.contains("open")) {
-    loadingIcon.classList.add("show-loading-loop");
-    translatedText.classList.add("blur-text");
-  }
+  logo.classList.add("show-loading-loop");
+  translatedText.classList.add("blur-text");
 }
 
 function hideLoadingIcon() {
-  loadingIcon.classList.remove("show-loading-loop");
+  logo.classList.remove("show-loading-loop");
   translatedText.classList.remove("blur-text");
 }
 //

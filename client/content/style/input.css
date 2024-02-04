@@ -6,17 +6,40 @@
 .input {
   font-size: 24px;
   display: block;
-  width: 50vw;
+  width: var(--constant-width);
   height: 56px;
   margin: auto;
   border-radius: 5px 5px 0 0;
   border: 1px solid var(--border-color);
   outline: none;
   background-color: var(--background-color);
-  background-image: url("../images/find-icon.svg");
-  background-position: left 17px center;
-  background-repeat: no-repeat;
-  background-size: 32px;
   padding: 0 120px 0 60px;
   color: var(--text-color);
+}
+
+.logo-wrapper {
+  position: absolute;
+  width: 60px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 20%;
+  background-color: #222;
+  background-image: url("../../logo-set/spotra-white.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  transition: background-image 0.15s ease-in;
+}
+
+.logo.show-loading-loop {
+  background-image: url("../images/loading-loop.svg");
 }

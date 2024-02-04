@@ -89,10 +89,21 @@ const transparentEffectDiv = document.createElement("div");
 transparentEffectDiv.className = "transparent-effect apply-transparent-effect";
 //
 
+// Spotra logo
+const logoWrapper = document.createElement("div");
+logoWrapper.className = "logo-wrapper";
+
+const logo = document.createElement("div");
+logo.className = "logo";
+
+logoWrapper.appendChild(logo);
+//
+
 // Append all elements to the wrappers
 inputWrapper.appendChild(input);
 inputWrapper.appendChild(swapper);
 inputWrapper.appendChild(transparentEffectDiv);
+inputWrapper.appendChild(logoWrapper);
 
 spotraWrapper.appendChild(inputWrapper);
 spotraWrapper.appendChild(spotraResult);

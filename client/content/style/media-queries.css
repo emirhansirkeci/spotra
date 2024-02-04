@@ -1,6 +1,6 @@
 @media screen and (width < 1366px) {
   .input,
   .spotra-result {
-    width: 65vw;
+    width: var(--constant-width-for-small-devices);
   }
 }
