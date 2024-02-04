@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Spotra",
   "version": "1.0.0",
-  "description": "Learn without losing focus",
+  "description": "Stay focused with Spotra",
   "permissions": ["storage", "tabs", "activeTab"],
   "host_permissions": ["https://*/*", "http://*/*"],
   "background": {
@@ -49,7 +49,7 @@
     }
   ],
   "action": {
-    "default_title": "Learn without losing focus",
+    "default_title": "Stay focused with Spotra",
     "default_popup": "./popup/index.html"
   },
   "icons": {
