@@ -9,7 +9,6 @@ const handleEvents = (e) => {
     close: isEscape,
     swap: e.shiftKey && (e.altKey || e.metaKey) && keyPressed === '"',
     mainShortcut: !e.shiftKey && (e.altKey || e.metaKey) && keyPressed === '"',
-    instantCopy: (e.altKey || e.metaKey) && "enter",
   };
 
   return keyStatus;

@@ -11,7 +11,9 @@ let applyTransparentEffect;
 input.addEventListener("keydown", async (e) => {
   const keyStatus = handleEvents(e);
 
-  if (keyStatus.close || keyStatus.mainShortcut) toggleSpotra();
+  if (keyStatus.close || keyStatus.mainShortcut) {
+    toggleSpotra();
+  }
 
   if (keyStatus.enter) {
     if (!input.value) return (input.placeholder = "Please write anything");

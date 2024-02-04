@@ -13,9 +13,8 @@
       "matches": ["https://*/*", "http://*/*"],
       "js": [
         "content/supported-languages.js",
-        "content/chrome-storage.js",
+        "content/chrome-runtime-messages.js",
         "content/shortcuts.js",
-        "content/translate.js",
         "content/selection.js",
         "content/initialize-elements.js",
         "content/input.js",
@@ -44,7 +43,9 @@
         "content/style/input.css",
         "content/style/result.css",
         "content/style/swapper.css",
-        "content/style/media-queries.css"
+        "content/style/media-queries.css",
+        "logo-set/black-background/spotra-black-128.png",
+        "logo-set/white-background/spotra-white-128.png"
       ]
     }
   ],
