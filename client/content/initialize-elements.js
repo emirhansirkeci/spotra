@@ -44,11 +44,7 @@ spotraResult.className = "spotra-result";
 const translatedText = document.createElement("p");
 translatedText.className = "translated-text";
 
-const loadingIcon = document.createElement("div");
-loadingIcon.className = "loading-loop";
-
 spotraResult.appendChild(translatedText);
-spotraResult.appendChild(loadingIcon);
 
 const input = document.createElement("input");
 input.type = "text";
