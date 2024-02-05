@@ -3,7 +3,7 @@
   "name": "Spotra",
   "version": "1.0.0",
   "description": "Stay focused with Spotra",
-  "permissions": ["storage", "tabs", "activeTab"],
+  "permissions": ["storage"],
   "host_permissions": ["https://*/*", "http://*/*"],
   "background": {
     "service_worker": "./background/index.js"
