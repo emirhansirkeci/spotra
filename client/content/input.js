@@ -140,3 +140,9 @@ function closeSpotra() {
   }, 100);
 }
 //
+
+// Experimental
+spotraResult.addEventListener("click", () => {
+  navigator.clipboard.writeText(translatedText.innerText);
+});
+//
