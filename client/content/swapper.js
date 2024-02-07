@@ -129,6 +129,8 @@ function swapLanguages() {
   let currentFromLanguage = fromElement.getAttribute("data-value");
   let currentToLanguage = toElement.getAttribute("data-value");
 
+  if (currentFromLanguage === "au") return;
+
   fromElement.setAttribute("data-value", currentToLanguage);
   toElement.setAttribute("data-value", currentFromLanguage);
 
@@ -137,6 +139,8 @@ function swapLanguages() {
 
   chrome.storage.local.set({ translateFrom: currentToLanguage });
   chrome.storage.local.set({ translateTo: currentFromLanguage });
+
+  input.focus();
 }
 
 input.addEventListener("keydown", (e) => handleLanguageSwap(e));
