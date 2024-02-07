@@ -3,6 +3,9 @@ import translate from "bing-translate-api";
 export const handleTranslationRequest = (req, res) => {
   let { text, translateFrom, translateTo } = req.body;
 
+  translateFrom = translateFrom.toLowerCase();
+  translateTo = translateTo.toLowerCase();
+
   if (!text || !text.trim())
     return res.status(400).json({
       code: 400,
@@ -20,7 +23,7 @@ export const handleTranslationRequest = (req, res) => {
     translate
       .translate(
         text,
-        translateFrom == "auto" ? null : translateFrom,
+        translateFrom == "au" ? null : translateFrom,
         translateTo
       )
       .then((response) => {

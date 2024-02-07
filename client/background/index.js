@@ -21,8 +21,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 });
 
 function getLanguages() {
-  const DEFAULT_TRANSLATE_FROM = "en";
-  const DEFAULT_TRANSLATE_TO = "tr";
+  const DEFAULT_TRANSLATE_FROM = "au";
+  const DEFAULT_TRANSLATE_TO = "en";
 
   return new Promise((resolve, reject) => {
     chrome.storage.local.get(["translateFrom", "translateTo"], (result) => {
@@ -56,7 +56,7 @@ async function getTranslatedText(text) {
   };
 
   let [translateFrom, translateTo] = await getLanguages();
-  translateFrom = translateFrom ? translateFrom : "auto";
+  translateFrom = translateFrom ? translateFrom : "au";
   translateTo = translateTo ? translateTo : "en";
 
   const translatedText = fetch(apiUrl, {

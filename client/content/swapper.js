@@ -28,6 +28,26 @@ Object.keys(supportedLanguages).forEach((languageName) => {
 });
 //
 
+// Generate and remove auto language detector element
+function generateAutoElement() {
+  if (langSelector.firstChild.getAttribute("data-value") == "au") return;
+
+  const language = document.createElement("div");
+
+  language.innerText = "Auto";
+  language.setAttribute("data-value", "au");
+  language.className = "language";
+
+  langSelector.insertBefore(language, langSelector.firstChild);
+}
+
+function removeAutoElement() {
+  const autoLanguage = langSelector.querySelector('.language[data-value="au"]');
+
+  if (autoLanguage) langSelector.removeChild(autoLanguage);
+}
+//
+
 const openLangSelector = () => {
   langSelector.classList.add("open");
   input.classList.add("blur");
@@ -39,11 +59,14 @@ const closeLangSelector = () => {
 };
 
 const handleSwapper = (target) => {
+  clickedElement = target;
+
+  if (clickedElement == fromElement) generateAutoElement();
+  else removeAutoElement();
+
   closeResult();
   removeSelection();
   openLangSelector();
-
-  clickedElement = target;
 };
 
 langs.addEventListener("click", (e) => handleSwapper(e.target));
@@ -52,15 +75,30 @@ langSelector.onclick = (e) => {
   if (e.target.className != "language") return;
   if (!clickedElement == fromElement || !clickedElement == toElement) return;
 
-  let language = e.target.getAttribute("data-value");
+  let clickedElementLanguage = e.target.getAttribute("data-value");
+  let fromElementLanguage = fromElement.getAttribute("data-value");
+  let toElementLanguage = toElement.getAttribute("data-value");
 
-  clickedElement.innerText = language;
-  clickedElement.setAttribute("data-value", language);
+  // If the selected language is the same as the opposite language, perform a language swap
+  if (
+    (clickedElement == fromElement &&
+      toElementLanguage == clickedElementLanguage) ||
+    (clickedElement == toElement &&
+      fromElementLanguage == clickedElementLanguage)
+  ) {
+    swapLanguages();
+    closeLangSelector();
+    return;
+  }
+  //
+
+  clickedElement.innerText = clickedElementLanguage;
+  clickedElement.setAttribute("data-value", clickedElementLanguage);
 
   if (clickedElement == fromElement)
-    chrome.storage.local.set({ translateFrom: language });
+    chrome.storage.local.set({ translateFrom: clickedElementLanguage });
   else if (clickedElement == toElement)
-    chrome.storage.local.set({ translateTo: language });
+    chrome.storage.local.set({ translateTo: clickedElementLanguage });
 
   closeLangSelector();
 };
@@ -79,6 +117,13 @@ function handleLanguageSwap(e) {
   const keyStatus = handleEvents(e);
   if (!keyStatus.swap) return;
 
+  swapLanguages();
+
+  closeResult();
+  removeSelection();
+}
+
+function swapLanguages() {
   let currentFromLanguage = fromElement.getAttribute("data-value");
   let currentToLanguage = toElement.getAttribute("data-value");
 
@@ -90,9 +135,6 @@ function handleLanguageSwap(e) {
 
   chrome.storage.local.set({ translateFrom: currentToLanguage });
   chrome.storage.local.set({ translateTo: currentFromLanguage });
-
-  closeResult();
-  removeSelection();
 }
 
 input.addEventListener("keydown", (e) => handleLanguageSwap(e));
