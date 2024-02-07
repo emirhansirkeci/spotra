@@ -122,7 +122,9 @@ function handleLanguageSwap(e) {
   closeResult();
   removeSelection();
 }
+//
 
+// Swap the source and target languages
 function swapLanguages() {
   let currentFromLanguage = fromElement.getAttribute("data-value");
   let currentToLanguage = toElement.getAttribute("data-value");
