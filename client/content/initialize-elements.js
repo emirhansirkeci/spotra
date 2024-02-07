@@ -52,6 +52,7 @@ input.id = "spotra";
 input.className = "input";
 input.placeholder = "Spotra";
 input.spellcheck = false;
+input.autocomplete = "off";
 
 const inputWrapper = document.createElement("div");
 inputWrapper.className = "input-wrapper";
