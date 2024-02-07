@@ -36,6 +36,7 @@
       "resources": [
         "content/images/find-icon.svg",
         "content/images/loading-loop.svg",
+        "content/images/success-icon.svg",
         "content/style/global.css",
         "content/style/general.css",
         "content/style/spotra.css",

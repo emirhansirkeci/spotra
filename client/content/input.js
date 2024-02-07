@@ -66,6 +66,16 @@ function hideLoadingIcon() {
 }
 //
 
+//
+function showSuccessIcon() {
+  logo.classList.add("show-success-icon");
+}
+
+function hideSuccessIcon() {
+  logo.classList.remove("show-success-icon");
+}
+//
+
 // Selected and entered text handlers
 async function handleSelectedText(selectedText) {
   showLoadingIcon();
@@ -145,12 +155,16 @@ function closeSpotra() {
 }
 //
 
-// instantly copy translated text
+// Instantly copy translated text
 function instantCopy() {
+  if (!spotraResult.classList.contains("open")) return;
+
   navigator.clipboard.writeText(translatedText.innerText);
+  showSuccessIcon();
+  setTimeout(() => {
+    hideSuccessIcon();
+  }, 500);
 }
 
-spotraResult.addEventListener("click", () => {
-  navigator.clipboard.writeText(translatedText.innerText);
-});
+spotraResult.addEventListener("click", instantCopy);
 //

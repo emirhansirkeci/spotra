@@ -37,9 +37,14 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 20px;
-  transition: background-image 0.15s ease-in;
+  transition: all 0.15s ease-in;
 }
 
 .logo.show-loading-loop {
   background-image: url("../images/loading-loop.svg");
+}
+
+.logo.show-success-icon {
+  background-image: url("../images/success-icon.svg");
+  background-size: 30px;
 }
