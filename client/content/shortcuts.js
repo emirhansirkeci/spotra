@@ -5,10 +5,11 @@ const handleEvents = (e) => {
   const isEscape = keyPressed === "escape" && isSpotraOpen;
 
   const keyStatus = {
-    enter: keyPressed === "enter",
+    enter: !e.shiftKey && keyPressed === "enter",
     close: isEscape,
     swap: e.shiftKey && (e.altKey || e.metaKey) && keyPressed === '"',
     mainShortcut: !e.shiftKey && (e.altKey || e.metaKey) && keyPressed === '"',
+    instantCopy: e.shiftKey && keyPressed === "enter",
   };
 
   return keyStatus;

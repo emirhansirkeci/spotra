@@ -12,14 +12,18 @@ input.addEventListener("keydown", async (e) => {
   const keyStatus = handleEvents(e);
 
   if (keyStatus.close || keyStatus.mainShortcut) {
-    toggleSpotra();
+    return toggleSpotra();
+  }
+
+  if (keyStatus.instantCopy) {
+    return instantCopy();
   }
 
   if (keyStatus.enter) {
     if (!input.value) return (input.placeholder = "Please write anything");
     else input.placeholder = "Spotra";
 
-    handleText(input.value);
+    return handleText(input.value);
   }
 
   // Apply a gradient transparent effect only when the user is not actively typing
@@ -141,7 +145,11 @@ function closeSpotra() {
 }
 //
 
-// Experimental
+// instantly copy translated text
+function instantCopy() {
+  navigator.clipboard.writeText(translatedText.innerText);
+}
+
 spotraResult.addEventListener("click", () => {
   navigator.clipboard.writeText(translatedText.innerText);
 });
