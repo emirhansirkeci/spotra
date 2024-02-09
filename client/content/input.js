@@ -74,6 +74,14 @@ function showSuccessIcon() {
 function hideSuccessIcon() {
   logo.classList.remove("show-success-icon");
 }
+
+function animateSuccessIcon() {
+  showSuccessIcon();
+
+  setTimeout(() => {
+    hideSuccessIcon();
+  }, 500);
+}
 //
 
 // Selected and entered text handlers
@@ -159,11 +167,8 @@ function closeSpotra() {
 function instantCopy() {
   if (!spotraResult.classList.contains("open")) return;
 
+  animateSuccessIcon();
   navigator.clipboard.writeText(translatedText.innerText);
-  showSuccessIcon();
-  setTimeout(() => {
-    hideSuccessIcon();
-  }, 500);
 }
 
 spotraResult.addEventListener("click", instantCopy);

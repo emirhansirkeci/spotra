@@ -100,6 +100,7 @@ langSelector.onclick = (e) => {
   else if (clickedElement == toElement)
     chrome.storage.local.set({ translateTo: clickedElementLanguage });
 
+  animateSuccessIcon();
   closeLangSelector();
 };
 
@@ -139,6 +140,8 @@ function swapLanguages() {
 
   chrome.storage.local.set({ translateFrom: currentToLanguage });
   chrome.storage.local.set({ translateTo: currentFromLanguage });
+
+  animateSuccessIcon();
 
   input.focus();
 }
