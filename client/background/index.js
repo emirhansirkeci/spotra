@@ -48,7 +48,7 @@ function getLanguages() {
 
 async function getTranslatedText(text) {
   console.log(text);
-  const apiUrl = "https://spotra-server.vercel.app/translate";
+  const apiUrl = "https://spotra-server.vercel.app/translates";
   // const apiUrl = "http://localhost:3000/translate";
 
   const headers = {

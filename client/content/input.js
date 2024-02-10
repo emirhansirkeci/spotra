@@ -54,7 +54,7 @@ input.addEventListener(
 );
 //
 
-// Handle loading icon display
+// Loading Icon
 function showLoadingIcon() {
   logo.classList.add("show-loading-loop");
   translatedText.classList.add("blur-text");
@@ -66,7 +66,7 @@ function hideLoadingIcon() {
 }
 //
 
-//
+// Success Icon
 function showSuccessIcon() {
   logo.classList.add("show-success-icon");
 }
@@ -81,6 +81,24 @@ function animateSuccessIcon() {
   setTimeout(() => {
     hideSuccessIcon();
   }, 500);
+}
+//
+
+// Error Icon
+function showErrorIcon() {
+  logo.classList.add("show-error-icon");
+}
+
+function hideErrorIcon() {
+  logo.classList.remove("show-error-icon");
+}
+
+function animateErrorIcon() {
+  showErrorIcon();
+
+  setTimeout(() => {
+    hideErrorIcon();
+  }, 1000);
 }
 //
 
@@ -104,14 +122,13 @@ async function handleText(text) {
 //
 
 // Result
-function updateResult(result) {
-  translatedText.innerText = result
-    ? result
-    : "ERROR! Translation could not be performed.";
-}
-
 function updateAndOpenResult(result) {
-  updateResult(result);
+  if (!result) {
+    return animateErrorIcon();
+  }
+
+  translatedText.innerText = result;
+
   openResult();
 }
 
