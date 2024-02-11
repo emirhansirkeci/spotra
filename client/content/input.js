@@ -189,4 +189,32 @@ function instantCopy() {
 }
 
 spotraResult.addEventListener("click", instantCopy);
+
+// Move vertically
+const windowHeight = window.innerHeight;
+const spotraHostHeight = spotraHost.offsetHeight;
+
+const minTop = 20;
+const maxTop = windowHeight - spotraHostHeight - 100;
+
+let isMouseDown = false;
+
+logo.addEventListener("mousedown", (e) => {
+  isMouseDown = true;
+});
+
+document.addEventListener("mouseup", () => {
+  isMouseDown = false;
+  document.body.style.userSelect = "auto";
+});
+
+document.addEventListener("mousemove", (e) => {
+  if (!isMouseDown) return;
+
+  let top = e.pageY - spotraHostHeight / 2;
+
+  const clampedTop = Math.min(Math.max(minTop, top), maxTop);
+  spotraHost.style.top = clampedTop + "px";
+  document.body.style.userSelect = "none";
+});
 //

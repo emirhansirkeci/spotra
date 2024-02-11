@@ -37,7 +37,8 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 20px;
-  transition: background-image 0.15s ease-in, background-color 0.15s ease-in;
+  transition: background-image 0.15s ease-in, background-color 0.15s ease-in,
+    background-size 0.15s ease-in;
 }
 
 .logo.show-loading-loop {
@@ -53,6 +54,16 @@
   background-image: url("../images/error-icon.svg");
   background-color: #ff5a79;
   animation: tilt-shaking 0.1s 5;
+}
+
+.logo:hover {
+  background-size: 30px;
+  background-image: url("../images/move-icon.svg");
+  cursor: grab;
+}
+
+.logo:active {
+  cursor: grabbing;
 }
 
 @keyframes tilt-shaking {
