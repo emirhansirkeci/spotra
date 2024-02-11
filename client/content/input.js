@@ -190,7 +190,7 @@ function instantCopy() {
 
 spotraResult.addEventListener("click", instantCopy);
 
-// Move vertically
+// Vertical dragging of Spotra
 const windowHeight = window.innerHeight;
 const spotraHostHeight = spotraHost.offsetHeight;
 
