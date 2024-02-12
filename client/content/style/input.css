@@ -57,8 +57,6 @@
 }
 
 .logo:hover {
-  background-size: 30px;
-  background-image: url("../images/move-icon.svg");
   cursor: grab;
 }
 

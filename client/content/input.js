@@ -204,6 +204,8 @@ logo.addEventListener("mousedown", (e) => {
 });
 
 document.addEventListener("mouseup", () => {
+  if (!isMouseDown) return;
+
   isMouseDown = false;
   document.body.style.userSelect = "auto";
   input.focus();
