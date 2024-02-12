@@ -206,14 +206,15 @@ logo.addEventListener("mousedown", (e) => {
 document.addEventListener("mouseup", () => {
   isMouseDown = false;
   document.body.style.userSelect = "auto";
+  input.focus();
 });
 
 document.addEventListener("mousemove", (e) => {
   if (!isMouseDown) return;
 
-  let top = e.pageY - spotraHostHeight / 2;
-
+  let top = e.clientY - spotraHostHeight / 2;
   const clampedTop = Math.min(Math.max(minTop, top), maxTop);
+
   spotraHost.style.top = clampedTop + "px";
   document.body.style.userSelect = "none";
 });
