@@ -6,11 +6,18 @@ Spotra, internette dolaşırken içerikten kopmadan kolayca çeviri yapmanıza o
 
 ![Spotra example screenshot](./spotra.png?raw=true "Spotra")
 
-### _Devam Eden Geliştirme Süreci_
+## Uzantıyı Yüklemek ve Kullanmak
 
-- [ ] Daha iyi çeviriler için bing-translate-api paketini değiştir
-- [x] Göze hoş gelen bir logo tasarla
-- [x] Dosya yapısını basitleştir
+_**Not:** Uzantı henüz Chrome Web Mağazası'nda mevcut değil._
+
+Bu uzantıyı hemen kullanmak veya geliştirmeye katkıda bulunmak isteyenler için aşağıdaki adımları takip edin.
+
+1. Github deposunu bilgisayarınıza klonlayın veya ZIP dosyası olarak indirin.
+2. Chrome tarayıcınızı açın ve sağ üst köşedeki üç noktaya tıklayın.
+3. 'Daha fazla araç' seçeneğini seçin ve ardından 'Uzantılar' kısmına gidin.
+4. Sağ üst köşede 'Geliştirici modu' seçeneğini etkinleştirin.
+5. 'Paketlenmemiş' üzerine tıklayın ve indirdiğiniz klasörü seçin.
+6. Uzantıyı başarıyla yükledikten sonra aktif olan sekmelerinizi yenileyerek kullanmaya başlayabilirsiniz.
 
 ### _Not_
 
