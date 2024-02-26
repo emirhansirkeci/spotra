@@ -19,6 +19,6 @@ Bu uzantıyı hemen kullanmak veya geliştirmeye katkıda bulunmak isteyenler i�
 5. 'Paketlenmemiş' üzerine tıklayın ve indirdiğiniz klasörü seçin.
 6. Uzantıyı başarıyla yükledikten sonra aktif olan sekmelerinizi yenileyerek kullanmaya başlayabilirsiniz.
 
-### _Not_
+## _Server_
 
 _Devam eden geliştirme süreci nedeniyle, şu anda sunucu tarafı için Vercel hobi planını kullanıyorum._

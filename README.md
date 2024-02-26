@@ -19,6 +19,6 @@ For those who want to use this extension immediately or contribute to its develo
 5. Click on 'Load unpacked' and choose the folder you downloaded.
 6. After you successfully install the extension, you can start using it by refreshing your active tabs.
 
-### _Note_
+## _Server_
 
 _Due to the ongoing development process, I am currently using the Vercel hobby plan for the server side._
