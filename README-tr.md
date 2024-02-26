@@ -14,11 +14,108 @@ Bu uzantıyı hemen kullanmak veya geliştirmeye katkıda bulunmak isteyenler i�
 
 1. Github deposunu bilgisayarınıza klonlayın veya ZIP dosyası olarak indirin.
 2. Chrome tarayıcınızı açın ve sağ üst köşedeki üç noktaya tıklayın.
-3. 'Daha fazla araç' seçeneğini seçin ve ardından 'Uzantılar' kısmına gidin.
-4. Sağ üst köşede 'Geliştirici modu' seçeneğini etkinleştirin.
-5. 'Paketlenmemiş' üzerine tıklayın ve indirdiğiniz klasörü seçin.
+3. Açılan menüde `Uzantılar` seçeneğine gelin ve `Uzantıları yönet` butonuna tıklayın.
+4. Sağ üst köşede `Geliştirici modu` seçeneğini etkinleştirin.
+5. `Paketlenmemiş öğe yükle` üzerine tıklayın ve indirdiğiniz dosyadaki **client/** dizinini seçin.
 6. Uzantıyı başarıyla yükledikten sonra aktif olan sekmelerinizi yenileyerek kullanmaya başlayabilirsiniz.
 
 ## _Server_
 
 _Devam eden geliştirme süreci nedeniyle, şu anda sunucu tarafı için Vercel hobi planını kullanıyorum._
+
+## Kurulum
+
+```bash
+git clone https://github.com/emirhansirkeci/spotra
+cd spotra
+npm install
+```
+
+## Çalıştırma Komutları
+
+API'yı **(node index.js kullanarak)** başlatmak için aşağıdaki komutu kullanın.
+
+```bash
+npm run start
+```
+
+veya geliştirme modunda API'yi çalıştırmak için **(nodemon index.js)** aşağıdaki komutu kullanın.
+
+```bash
+npm run dev
+```
+
+Eğer **nodemon** yüklü değilse, aşağıdaki kodu kullanarak yükleyin
+
+```bash
+npm install -g nodemon
+```
+
+## Kullanılabilir Endpointler
+
+<details>
+<summary>POST /translate</summary>
+
+## Request (İstek)
+
+- `text` (string, zorunlu): Çevrilecek metin.
+- `translateFrom` (string, isteğe bağlı): Kaynak dil kodu (örneğin, İngilizce için "en"). Eğer belirtilmezse, API otomatik olarak kaynak dilini tespit eder.
+- `translateTo` (string, zorunlu): Hedef dil kodu (örneğin, İspanyolca için "es").
+
+## Responses (Yanıtlar)
+
+### Success
+
+**Status:** 200 OK
+
+```bash
+{
+  source: "en",
+  target: "es",
+  text: "Hello, World!",
+  result: "¡Hola, Mundo!"
+}
+```
+
+### Error
+
+**Status:** 400 Bad Request
+
+```bash
+{
+ code: 400,
+ message: "Invalid request. Please provide a valid text parameter."
+}
+```
+
+**Status:** 500 Internal Server Error
+
+```bash
+{
+  code: 500,
+  message: "Internal Server Error. Failed to fetch data."
+}
+```
+
+</details>
+
+## Desteklenen Diller
+
+_Güncellenecek._
+
+```bash
+{
+  Turkish: "tr",
+  English: "en",
+  Italian: "it",
+  German: "de",
+  Dutch: "nl",
+  Japanese: "ja",
+  Korean: "ko",
+  French: "fr",
+  Portuguese: "pt",
+  Russian: "ru",
+  Spanish: "es",
+  Swedish: "sv",
+};
+```
