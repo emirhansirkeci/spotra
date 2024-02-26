@@ -27,7 +27,7 @@ _Devam eden geliştirme süreci nedeniyle, şu anda sunucu tarafı için Vercel 
 
 ```bash
 git clone https://github.com/emirhansirkeci/spotra
-cd spotra
+cd spotra/server
 npm install
 ```
 

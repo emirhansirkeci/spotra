@@ -27,7 +27,7 @@ _Due to the ongoing development process, I am currently using the Vercel hobby p
 
 ```bash
 git clone https://github.com/emirhansirkeci/spotra
-cd spotra
+cd spotra/server
 npm install
 ```
 
