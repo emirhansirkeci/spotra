@@ -19,6 +19,15 @@ Bu uzantıyı hemen kullanmak veya geliştirmeye katkıda bulunmak isteyenler i�
 5. `Paketlenmemiş öğe yükle` üzerine tıklayın ve indirdiğiniz dosyadaki **client/** dizinini seçin.
 6. Uzantıyı başarıyla yükledikten sonra aktif olan sekmelerinizi yenileyerek kullanmaya başlayabilirsiniz.
 
+## Kısayollar
+
+| Eylem            | MacOS                                          | Diğer                                            |
+| ---------------- | ---------------------------------------------- | ------------------------------------------------ |
+| Aç/Kapat         | <kbd>⌘</kbd> + <kbd>"</kbd>                    | <kbd>alt</kbd> + <kbd>"</kbd>                    |
+| Dilleri Değiştir | <kbd>⌘</kbd> + <kbd>shift</kbd> + <kbd>"</kbd> | <kbd>alt</kbd> + <kbd>shift</kbd> + <kbd>"</kbd> |
+| Anında Kopyala   | <kbd>⌘</kbd> + <kbd>enter</kbd>                | <kbd>alt</kbd> + <kbd>enter</kbd>                |
+| Kapat            | <kbd>esc</kbd>                                 | <kbd>esc</kbd>                                   |
+
 ## _Server_
 
 _Devam eden geliştirme süreci nedeniyle, şu anda sunucu tarafı için Vercel hobi planını kullanıyorum._
