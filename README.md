@@ -19,7 +19,16 @@ For those who want to use this extension immediately or contribute to its develo
 5. Click `Load unpackaged` and select the **client/** directory in the file you downloaded.
 6. After you successfully install the extension, you can start using it by refreshing your active tabs.
 
-## _Server_
+## Shortcuts
+
+| Action         | MacOS                                          | Other                                            |
+| -------------- | ---------------------------------------------- | ------------------------------------------------ |
+| Toggle         | <kbd>⌘</kbd> + <kbd>"</kbd>                    | <kbd>alt</kbd> + <kbd>"</kbd>                    |
+| Swap Languages | <kbd>⌘</kbd> + <kbd>shift</kbd> + <kbd>"</kbd> | <kbd>alt</kbd> + <kbd>shift</kbd> + <kbd>"</kbd> |
+| Instant Copy   | <kbd>⌘</kbd> + <kbd>enter</kbd>                | <kbd>alt</kbd> + <kbd>enter</kbd>                |
+| Close          | <kbd>esc</kbd>                                 | <kbd>esc</kbd>                                   |
+
+## Server
 
 _Due to the ongoing development process, I am currently using the Vercel hobby plan for the server side._
 
