@@ -88,10 +88,10 @@ transparentEffectDiv.className = "transparent-effect apply-transparent-effect";
 
 // Spotra logo
 const logoWrapper = document.createElement("div");
-logoWrapper.className = "logo-wrapper";
+logoWrapper.className = "spotra-logo-wrapper";
 
 const logo = document.createElement("div");
-logo.className = "logo";
+logo.className = "spotra-logo";
 
 logoWrapper.appendChild(logo);
 //

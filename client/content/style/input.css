@@ -17,7 +17,7 @@
   color: var(--text-color);
 }
 
-.logo-wrapper {
+.spotra-logo-wrapper {
   position: absolute;
   width: 60px;
   height: 100%;
@@ -28,7 +28,7 @@
   justify-content: center;
 }
 
-.logo {
+.spotra-logo {
   width: 40px;
   height: 40px;
   border-radius: 20%;
@@ -41,26 +41,26 @@
     background-size 0.15s ease-in;
 }
 
-.logo.show-loading-loop {
+.spotra-logo.show-loading-loop {
   background-image: url("../images/loading-loop.svg");
 }
 
-.logo.show-success-icon {
+.spotra-logo.show-success-icon {
   background-image: url("../images/success-icon.svg");
   background-size: 30px;
 }
 
-.logo.show-error-icon {
+.spotra-logo.show-error-icon {
   background-image: url("../images/error-icon.svg");
   background-color: #ff5a79;
   animation: tilt-shaking 0.1s 5;
 }
 
-.logo:hover {
+.spotra-logo:hover {
   cursor: grab;
 }
 
-.logo:active {
+.spotra-logo:active {
   cursor: grabbing;
 }
 
