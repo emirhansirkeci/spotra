@@ -12,9 +12,9 @@
 .transparent-effect.apply-transparent-effect {
   background: linear-gradient(
     to right,
-    rgba(248, 245, 244, 0.4),
-    rgba(248, 245, 244, 0.9),
-    rgba(248, 245, 244, 1)
+    rgba(255, 255, 255 0.4),
+    rgba(255, 255, 255 0.9),
+    rgba(255, 255, 255 1)
   );
   opacity: 1;
 }
